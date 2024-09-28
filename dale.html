@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="port.css">
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>Portfolio</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar{
+            width: 10px;
+            border-radius: 25px;
+        }
+        ::-webkit-scrollbar-track{
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: #ccc;
+            border-radius: 30px;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background: #bbb;
+        }
+
+        .btn{
+            font-weight: 500;
+            padding: 12px 20px;
+            background: #efefef;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .4s;
+        }
+        .btn>i{
+            margin-left: 10px;
+        }
+        .btn:hover{
+            background: var(--second-color);
+            color: var(--color-white);
+        }
+
+        i{
+            font-size: 16px;
+        }
+
+        body{
+            background: var(--body-color);
+        }
+        .container{
+            width: 100%;
+            position: relative;
+        }
+
+        nav{
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 90px;
+            line-height: 90px;
+            background: var(--body-color);
+            padding-inline: 9vw;
+            transition: .3s;
+            z-index: 100;
+            background-color: white;
+        }
+        .nav-logo{
+        position: relative;
+        }
+
+        .nav-name{
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--text-color-third);
+        }
+        .nav-logo span{
+            position: absolute;
+            top: -15px;
+            right: -20px;
+            font-size: 5em;
+            color: var(--text-color-second);
+        }
+        .nav-menu, .nav_menu_list{
+            display: flex;
+        }
+        .nav-menu .nav_list{
+            list-style: none;
+            position: relative;
+        }
+
+        .nav-logo, .nav-menu .nav_list:hover{
+            color: orange;
+        }
+
+        .nav-link{
+            text-decoration: none;
+            color: var(--text-color-second);
+            font-weight: 500;
+            padding-inline: 15px;
+            margin-inline: 20px;
+        }
+        .nav-menu-btn{
+            display: none;
+        }
+        .nav-menu-btn i{
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .active-link{
+            position: relative;
+            color: var(--first-color);
+            transition: .3;
+        }
+        .active-link::after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 5px;
+            background: var(--first-color);
+            border-radius: 50%;
+        }
+
+        .wrapper{
+            padding-inline: 10vw;
+        }
+
+        .featured-box{
+            position: relative;
+            display: flex;
+            height: 100vh;
+            min-height: 700px;
+        }
+
+        /* ----- FEATURED TEXT BOX ----- */
+        .featured-text{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            min-height: 80vh;
+            flex-direction: column;
+            width: 50%;
+            padding-left: 20px;
+        }
+        .featured-text-card span{
+            padding: 3px 8px;
+            font-size: 12px;
+            border-radius: 5px;
+            outline: orange 1px solid;
+        }
+        .featured-name{
+            font-size: 50px;
+            font-weight: 600;
+            color: orange;
+            margin-block: 20px;
+        }
+        .typedText{
+            text-transform: capitalize;
+            color: var(--text-color-third);
+        }
+        .featured-text-info{
+            font-size: 15px;
+            margin-bottom: 30px;
+            color: var(--text-color-second);
+        }
+        .featured-text-btn{
+            display: flex;
+            gap: 20px;
+        }
+
+        .featured-text-btn>.blue-btn:hover{
+            background: orange;
+        }
+        .social_icons{
+            display: flex;
+            margin-top: 5em;
+            gap: 30px;
+        }
+        .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+        }
+        .icon:hover{
+            color: var(--first-color);
+        }
+        /* ----- FEATURED IMAGE BOX ----- */
+        .featured-image{
+            border: orange 2 solid;
+            display: flex;
+            justify-content: right;
+            align-content: center;
+            min-height: 80vh;
+            width: 50%;
+        }
+        .image{
+            border: orange 2 solid;
+            margin: auto 0;
+            width: 380px;
+            height: 380px;
+            border-radius: 55% 45% 55% 45%;
+            overflow: hidden;
+        }
+        .image img{
+            width: 380px;
+            height: 380px;
+            object-fit: cover;
+        }
+        @keyframes imgFloat {
+            50%{
+                transform: translateY(10px);
+                border-radius: 45% 55% 45% 55%;
+            }
+        }
+        .scroll-btn{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        translate: -50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 50px;
+        gap: 5px;
+        text-decoration: none;
+        color: orange;
+        background: var(--color-white);
+        border-radius: 30px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+        }
+        .scroll-btn i{
+            font-size: 20px;
+        }
+        /* ----- MAIN BOX ----- */
+        .section{
+            padding-block: 5em;
+        }
+        .row{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 50px;
+        }
+        .col{
+            display: flex;
+            width: 50%;
+        }
+        /* -- ## --- RESUABLE CSS -- ## -- */
+        .top-header{
+            text-align: center;
+            margin-bottom: 5em;
+        }
+        .top-header h1{
+            font-weight: 600;
+            color: var(--text-color-second);
+            margin-bottom: 10px;
+        }
+        .top-header span{
+            color: #999;
+        }
+        h3{
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-color-second);
+            margin-bottom: 15px;
+        }
+        /* ----- ABOUT INFO ----- */
+        .about-info{
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-block: 30px 70px;
+            padding-inline: 20px;
+            width: 100%;
+            outline: orange 1px solid;
+            border-radius: 20px;
+        }
+        .about-info p{
+            text-align: center;
+            font-size: 15px;
+            color: #777;
+        }
+        .about-btn button{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background: orange;
+            color: black;
+            border-radius: 30px;
+        }
+        .about-btn button:hover{
+            background: lightgray;
+        }
+        /* ----- ABOUT / SKILLS BOX ----- */
+        .skills-box{
+            margin: 10px;
+        }
+        .skills-header{
+            margin-bottom: 30px;
+        }
+        .skills-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .skills-list span{
+            font-size: 14px;
+            background: orange;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 5px;
+        }
+
+        /* ----- FOOTER BOX ----- */
+        footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 30px;
+            background: #F8F8F8;
+            padding-block: 40px 60px;
+        }
+        .top-footer p{
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .middle-footer .footer-menu{
+            display: flex;
+        }
+        .footer_menu_list{
+            list-style: none;
+        }
+        .footer_menu_list a{
+            text-decoration: none;
+            color: orange;
+            font-weight: 500;
+            margin-inline: 20px;
+        }
+        .footer-social-icons{
+            display: flex;
+            gap: 30px;   
+        }
+        .bottom-footer{
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- --------------- HEADER --------------- -->
+          <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">dec</p>
+                <span>.</span>
+            </div>
+            <div class="nav-menu" id="myNavMenu">
+                <ul class="nav_menu_list">
+                    <li class="nav_list">
+                        <a href="#home" class="nav-link active-link">HOME</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#about" class="nav-link">ABOUT</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#projects" class="nav-link">SERVICES</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#contact" class="nav-link">WORKS</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#contact" class="nav-link">CERTS</a>
+                        <div class="circle"></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-menu-btn">
+                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+            </div>
+          </nav>
+           <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+        <!-- -------------- FEATURED BOX ---------------- -->
+        <section class="featured-box" id="home">
+           <div class="featured-text">
+             <div class="featured-text-card">
+                 <span>Dale Elisha Cruz</span>
+             </div>
+             <div class="featured-name">
+                 <p>I'm a Developer<span class="typedText"></span></p>
+             </div>
+             <div class="featured-text-info">
+                 <p>A fourth-year college student taking a major in Information Technology, specializing in Web and Mobile Applications at Tarlac State University (TSU)
+                 </p>
+             </div>
+             <div class="featured-text-btn">
+                 <button class="btn blue-btn">Hire Me</button>
+                 <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+             </div>
+             <div class="social_icons">
+                 <div class="icon"><i class="uil uil-instagram"></i></div>
+                 <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+                 <div class="icon"><i class="uil uil-dribbble"></i></div>
+                 <div class="icon"><i class="uil uil-github-alt"></i></div>
+             </div>
+           </div>
+           <div class="featured-image">
+             <div class="image">
+                 <img src="picture.png" alt="avatar">
+             </div>
+           </div>
+           <div class="scroll-icon-box">
+             <a href="#about" class="scroll-btn">
+                 <i class="uil uil-mouse-alt"></i>
+                 <p>Scroll Down</p>
+             </a>
+           </div>
+        </section>
+        <!-- -------------- ABOUT BOX ---------------- -->
+       <section class="section" id="about">
+        <div class="top-header">
+          <h1>About Me</h1>
+        </div>
+        <div class="row">
+          <div class="col">
+              <div class="about-info">
+                  <h3>My introduction</h3>
+                  <p>As a passionate IT professional based in Tarlac City, Philippines, I've dedicated my career to web designing and graphics. With a strong foundation in frontend developement and layouting, I'm committed to delivering innovative solutions and exceeding client expectations. Through my work, I aim to contribute to a more creative and aesthetic perspectives in the field of arts and technology.
+                  </p>
+                  <div class="about-btn">
+                      <button class="btn">Download CV <i class="uil uil-import"></i></button>
+                  </div>
+              </div>
+          </div>
+          <div class="col">
+              <div class="skills-box">
+                  <div class="skills-header">
+                      <h3>Frontend</h3>
+                  </div>
+                  <div class="skills-list">
+                      <span>HTML</span>
+                      <span>CSS</span>
+                      <span>JavaScript</span>
+                      <span>Figma</span>
+                  </div>
+              </div>
+              <div class="skills-box">
+                  <div class="skills-header">
+                      <h3>Backend</h3>
+                  </div>
+                  <div class="skills-list">
+                      <span>PHP</span>
+                      <span>JAVA</span>
+                      <span>Python</span>
+                  </div>
+              </div>
+              <div class="skills-box">
+                  <div class="skills-header">
+                      <h3>Database</h3>
+                  </div>
+                  <div class="skills-list">
+                      <span>MySQL</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+     </section>
+     <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+            <p>Dale Elisha Cruz</p>
+        </div>
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#about">About</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#projects">Services</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact">Works</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact">Certs</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <div class="icon"><i class="uil uil-instagram"></i></div>
+            <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+            <div class="icon"><i class="uil uil-dribbble"></i></div>
+            <div class="icon"><i class="uil uil-github-alt"></i></div>
+        </div>
+        <div class="bottom-footer">
+            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Dale Elisha</a> - All rights reserved</p>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
