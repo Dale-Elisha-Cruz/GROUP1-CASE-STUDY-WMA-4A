@@ -6,6 +6,582 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="stylee.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800;900&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #f0e9ea;
+    --text-color: #555;
+}
+
+html {
+    font-size: 80%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 12%;
+    background: #f0e9ea;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    padding-top: 10rem; /* Add padding to avoid content overlap with the header */
+}
+
+.logo {
+    font-size: 2.5em;
+    color: #555;
+    cursor: pointer;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    color: #f0958f;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navigation a {
+    font-size: 1em;
+    color: #555;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: #f0958f;
+    border-bottom: 3px solid #f0958f;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 12%;
+}
+
+.talk {
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    padding: 8px 35px;
+    background: #f0958f;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.talk:hover {
+    color: #f0958f;
+    background: transparent;
+}
+
+/* Home section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 12%; /* Increase vertical padding */
+    gap: 15rem;
+    min-height: 100vh;
+}
+
+.home h3 {
+    font-size: 2.5rem;
+}
+
+.home .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+    max-width: 500px;
+}
+
+.content h2 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-top: 10rem;
+    line-height: 1;
+}
+
+.content h2 span {
+    color: #f0958f;
+}
+
+.content p {
+    font-size: 1rem;
+    font-weight: 500px;
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: 2px solid #f0958f;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color:#f0958f;
+    margin: 3rem 2rem 3rem 0;
+    transition: 0.3s ease-in-out;
+    margin-top: 15px;
+    margin-bottom: 23px;
+}
+
+.social-icons a:hover{
+    color: #555;
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px #f0958f;
+    background-color:#f0958f;
+}
+
+.group a {
+    color: #fff;
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: #f0958f;
+    border-radius: 4rem;
+    box-shadow: 0 0 25px #f0958f;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    transition: .3s ease-in;
+    cursor: pointer;
+    margin-top: 5px; /* Add top margin for additional spacing */
+}
+
+.group a:nth-child(1) {
+    color: #f0958f;
+    background: transparent;
+    margin-left: 30px;
+    padding: 10px 30px;
+}
+
+.group a:hover:nth-child(1) {
+    color: #fff;
+    box-shadow: 0 0 50px #f0958f;
+    background: #f0958f;
+    transform: scale(1.05);
+}
+
+.home-image {
+    max-width: 45%;
+    height: auto;
+    top: 3rem;
+    position: relative;
+    right: 50px;
+    margin-top: -70px;
+    transform: translateY(10%);
+    border-radius: 50%;
+    transition: 0.4s ease-in-out; 
+    box-shadow: 0 0 25px rgba(240, 149, 143, 0.5);
+}
+
+.home-image:hover {
+    box-shadow: 0 0 25px rgba(240, 149, 143, 0.5), 
+                0 0 50px rgba(240, 149, 143, 0.3), 
+                0 0 100px rgba(240, 149, 143, 0.1);
+    transform: translateY(11%) scale(1.00); /* Move up and scale slightly */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure it fills the viewport height */
+    background-color: #f0e9ea; /* Background color */
+    padding: 30px 100px; /* Padding around the section */
+}
+
+/* Image in the home section */
+.home-image {
+    max-width: 45%;
+    height: auto;
+    position: relative; /* Change to relative for better positioning */
+    right: 50px;
+    transform: translateY(10%); /* Adjust for positioning */
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0e9ea; /* Updated background color */
+    display: flex;
+    align-items: center;
+    padding: 30px 100px;
+}
+
+/* Image in the about section */
+.about-image {
+    height: 595px; /* Increased height for a bigger image */
+    width: auto; /* Maintain the aspect ratio */
+    position: absolute; /* Positioning it in the left corner of the text */
+    left: 20px; /* Distance from the left edge */
+    top: 20%; /* Adjust this value as needed for vertical placement */
+    border-radius: 10px; /* Optional: Add some rounding to the image corners */
+}
+
+.text {
+    max-width: 600px;
+    color: #555;
+    margin-left: 600px;
+}
+
+.text h2 span {
+    color: #f0958f;
+}
+
+.text h2 {
+    font-size: 5em;
+}
+
+.text-animation {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.more {
+    color: #f0958f;
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: transparent;
+    border-radius: 4rem;
+    box-shadow: 0 0 25px #f0958f;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    transition: .3s ease-in;
+    cursor: pointer;
+    margin-top: 5px; /* Add top margin for spacing */
+}
+
+.more:hover {
+    color: #f0e9ea;
+    box-shadow: 0 0 50px #f0958f;
+    background: #f0958f;
+    transform: scale(1.05);
+}
+.heading{
+    font-size: 5rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.heading span {
+    color: #f0958f;
+}
+
+.education{
+    padding: 100px 15px;
+    background-color: #f0e9ea;
+}
+
+.educational h2{
+    margin-bottom: 5rem;
+}
+
+.timeline-items{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-items::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: #f0958f;
+    left: calc(50% - 1%);
+}
+
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item.right{
+    padding-right: calc(50% + 30px);
+    text-align: right;
+    
+}
+
+.timeline-item.left{
+    padding-left: calc(50% + 30px);
+    text-align: left;
+}
+
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: #f0958f;
+    box-shadow: 0 0 25px #f0958f,
+                0 0 50px #f0958f;
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50px;
+    top: 10px;
+}
+
+.timeline-date {
+    font-size: 16px;
+    font-weight: 800;
+    color: #555;
+    margin: 6px 0 15px;
+}
+
+.timeline-content ol{
+    font-size: 11px;
+}
+
+.timeline-content{
+    background-color: #f0e9ea;
+    border: 3px solid #f0958f;
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px #f0958f;
+    cursor:pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.timeline-content:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #f0958f;
+}
+
+.timeline-content h3{
+    font-size: 15px;
+    color: #555;
+    margin: 0 0 10px;
+    font-weight:500;
+}
+
+.timeline-content p{
+    color: #555;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 22px;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #bbb;
+}
+
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    width: 100%;
+    height: 315px;
+    background: #f0958f; 
+    border-radius: 10px;
+    box-shadow: 1px 8px 10px 2px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.contact-info h2 {
+    margin-bottom: 20px;
+}
+
+.top-header h2 {
+    text-align: center;
+}
+
+.top-header h4 {
+    text-align: center;
+    font-weight: 60;
+    
+}
+
+.contact-header {
+    font-size: 5em; /* Adjust font size */
+    color: #555; /* Color for the header */
+    margin-bottom: 20px; /* Space below the header */
+    text-align: center; /* Center the header */
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    margin: 5px 0;
+}
+
+/* Contact Form */
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-inputs {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.input-field {
+    width: 50%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    padding-inline: 20px;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    height: 150px; /* Reduced height to match the image */
+    background: transparent;
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    padding: 15px 20px;
+    outline: none;
+    resize: none;
+}
+
+/* Submit Button */
+.form-button .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0958f; /* Match the button blue */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.form-button .btn:hover {
+    background: #f0958f;
+    transform: scale(1.05);
+}
+
+.form-button i {
+    font-size: 18px;
+    rotate: -45deg;
+}
+
+/* Row and Column Layout */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col {
+    width: 48%;
+}
+
+/* ----- FOOTER BOX ----- */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+    background: #F8F8F8;
+    padding-block: 40px 60px;
+}
+.top-footer p{
+    font-size: 25px;
+    font-weight: 600;
+}
+.middle-footer .footer-menu{
+    display: flex;
+}
+.footer_menu_list{
+    list-style: none;
+}
+.footer_menu_list a{
+    text-decoration: none;
+    color: var(--text-color-second);
+    font-weight: 500;
+    margin-inline: 20px;
+}
+.footer-social-icons{
+    display: flex;
+    gap: 30px;   
+}
+.bottom-footer{
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+</style>
 </head>
 
 <body>
@@ -38,12 +614,12 @@
                 <a href="#about">Know more about me</a>
             </div>
         </div>
-        <img src="IMG_3754.JPG" alt="Jenny's Picture" class="home-image">
+        <img src="Jenpic1.JPG" alt="Jenny's Picture" class="home-image">
     </section>
 
     <section class="about" id="about">
         <div class="text">
-            <img src="pic2.png" alt="About Me" class="about-image"> <!-- Add this line -->
+            <img src="Jenpic2.png" alt="About Me" class="about-image"> <!-- Add this line -->
             <h2>About <span>Me</span></h2>
             <p>I am Jenny Rose T. Latores, a 4th-year student pursuing a Bachelor of Science in Information Technology, majoring in web and mobile application development. As a current student, I am developing my skills in web technologies such as HTML, CSS, JavaScript, and PHP. I am also learning mobile development through React Native, and gaining experience with databases like MySQL and Firebase.</p><br>
             <p>Throughout my studies, I have worked on projects such as a mobile app/websites for ordering management system and a hospital appointment system. These projects have allowed me to apply my knowledge and improve my problem-solving abilities. I am excited to continue my learning journey and enhance my expertise in creating user-friendly digital solutions.</p><br>
