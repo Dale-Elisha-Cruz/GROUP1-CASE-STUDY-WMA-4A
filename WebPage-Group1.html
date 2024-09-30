@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group's WebPage</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- CSS EMBEDDED STYLING -->
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background: linear-gradient(45deg,#fff1e4, white);
+            margin: 0; 
+        }
+
+        /* HEADER */
+        header{
+            box-shadow: 0 0 5px rgba(0, 0 ,0, 0.1);
+            position: fixed;
+            z-index: 4;
+            top: 0;
+            background-color: rgb(255, 255, 255);
+            width: 100%; 
+        }
+
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo h1{
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            letter-spacing: -1px;
+            font-family: "Poppins", sans-serif;
+            color: #fc3f23;
+        }
+
+        /* SECTION 1 */
+        .banner-background1 img{
+            width: 100%;
+            height: 575px;
+            margin: 0 auto;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            z-index: 0;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+
+        #Section_1{
+            position: absolute;
+            margin-top: 22%; 
+            margin-left: 40%;  
+            transform: translate(-50%, -50%);
+            text-align: left;
+            z-index: 2;  
+            color: rgb(248, 248, 248);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #Section_1 .title1 {
+            font-size: 60px; 
+            color: white;
+            margin-bottom: 15px;
+            font-family: "Gloock", serif;
+            letter-spacing: 2px;
+        }
+
+        #Section_1 .sub2 {
+            font-size: 15px; 
+            font-family: "Poppins", sans-serif;
+            color: white;
+        }
+
+
+        /* SECTION 2 */
+        #Section_2{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            padding-bottom: 60px;
+            position: absolute;
+            margin-top: 590px;
+        }
+
+
+        #Section_2 .big_Title_Sec::first-line{
+            font-family: "Gloock", serif;
+            font-weight: 700;
+            font-size: 25px;
+            color: #fc3f23;
+            letter-spacing: 2px;
+            line-height: 54px;
+            margin-bottom: 0px;
+        }
+
+        #Section_2 .big_Title_Sec{
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            line-height: 0px;
+            margin-top: 0px; 
+            padding-top: 0px;
+            margin-bottom: 80px;
+            
+        }
+
+        #Section_2 .big_Title_Sec:hover{
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; 
+            padding: 30px; 
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.9s ease-in-out;
+        }
+
+        .container .box{  
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            width: 260px;
+            height: 250px;
+            margin: 15px;
+            box-sizing: border-box;
+            border-radius: 30px;
+            line-height: 15px;
+            transition: all 0.3s ease 0s;
+        }
+
+
+        /* INDIV PORTFOLIOS */
+        .box img {
+            width: 260px;  
+        }
+
+        #at_1 img {
+            width: 260px;  
+            height: 178px; 
+            border-top-right-radius: 30px;
+        }
+
+        #at_2 img {
+            width: 260px;  
+            height: 178px; 
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+        }
+
+        #at_3 img {
+            width: 260px;  
+            height: 178px; 
+            border-top-left-radius: 30px;
+        }
+
+        #at_4 img {
+            width: 260px;  
+            height: 178px; 
+            border-top-right-radius: 30px;
+        }
+
+        #at_5 img {
+            width: 260px;  
+            height: 178px; 
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+        }
+
+        #at_6 img {
+            width: 260px;  
+            height: 178px; 
+            border-top-left-radius: 30px;
+        }
+
+        #at_7 img {
+            width: 260px;  
+            height: 178px; 
+            border-top-left-radius: 30px;
+        }
+
+        .box:hover{
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s; 
+        }
+
+        .box_content h3{
+            font-family: "Helvetica", sans-serif;
+            background-image: linear-gradient(45deg, #ffeccb 0%, #d51721 40%, #2a00a8 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 17px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .container .box .box_content{
+            position: abxolute;
+            top: 100%;
+            text-align: center;
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+
+        .banner-background2{
+            max-width: 100%;
+            height: auto;
+            position: relative;
+            background-repeat: no-repeat; 
+            display: flex;
+            flex-direction: column;
+            padding: 0%;
+            margin: 0; 
+        }
+
+        .box {
+            overflow: hidden;
+        }
+
+        .box img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: 0.5s ease;
+        }
+
+        .box img:hover {
+            transform: scale(1.2);
+        }
+
+        .box_content span {
+            font-size: 12px;
+        }        
+    </style>
+
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h1>caseStudy</h1>
+    </header><br><br><br>
+
+    <div class="bannerAndTitle">
+        <!-- BANNER -->
+        <div class="banner-background1">
+            <img src="https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2460.jpg?w=900&t=st=1727675920~exp=1727676520~hmac=165ec686b3841160c2e105999c2ef3a7e4ec3645237a8f3e8bee044564780ea0">
+        </div>
+
+        <!-- SECTION 1 -->
+        <div id="Section_1">
+            <h2 class="title1">IPT2 Case Study involving Git and GitHub</h2>
+            <!-- <h1 class="title2">  The Philippines Tourist Spots</h1> -->
+            <p class="sub2">This case study explore the effective utilization of Git and GitHub in the development of static portfolio websites. The members developed their personalized portfolio websites, meticulously documenting their development process, and subsequently uploading and deploying their projects to a GitHub repository.</p><br>
+        </div>
+    </div>
+
+    <!-- JavaScript for the scrolling/revealing up effect    -->
+    <script>  
+        const text = document.querySelector('#Section_1');
+        window.addEventListener('scroll', function() {
+          const scrolled = window.scrollY;
+          const opacity = scrolled / 900; 
+    
+          text.style.opacity = 1 - opacity;
+          text.style.transform = `translate(-50%, -50%) translateY(-${scrolled}px)`;
+        });
+    </script>
+
+
+    <!-- SECTION 2 -->
+    <div id="Section_2">
+        <br><br>
+        <p class="big_Title_Sec" id="discover">Visit<br>
+            Members' Personalized Portfolios</p>
+
+        <div class="container">
+            <!-- DALE PORTFOLIO -->
+            <div class="box" id="at_1">
+                <a href="dale.html" target="_self"><img src="WebPage-Group-Dale.png" alt="#" class="disc_img"></a>
+                
+                <div class="box_content">
+                    <h3>Dale ELisha Cruz</h3>
+                </div>
+            </div>
+            <!-- JENNY PORTFOLIO -->
+            <div class="box" id="at_2">
+                <a href="jenny.html" target="_self"><img src="WebPage-Group-Jenny.png" alt="#" class="disc_img"></a>
+                
+                <div class="box_content">
+                    <h3>Jenny Rose Latores</h3>
+                </div>
+            </div>
+            <!-- GREISCHELLE PORTFOLIO -->
+            <div class="box" id="at_3">
+                <a href="greischelle.html" target="_self"><img src="WebPage-Group-Greischelle.png" alt="#" class="disc_img"></a>
+                
+                <div class="box_content">
+                    <h3>Greischelle Lopez</h3>
+                </div>
+            </div>
+            <!-- AMOR PORTFOLIO -->
+            <div class="box" id="at_4">
+                <a href="amor.html" target="_self"><img src="WebPage-Group-Amor.png" alt="#" class="disc_img"></a>
+                
+                <div class="box_content">
+                    <h3>Ma. Amor Espiritu</h3>
+                </div>
+            </div>
+            <!-- MACKY PORTFOLIO -->
+            <div class="box" id="at_6">
+                <a href="macky.html" target="_self"><img src="WebPage-Group-Macky.png" alt="#"></a>
+                
+                <div class="box_content">
+                    <h3>Macky Enriquez</h3>
+                </div>
+            </div>
+            <!-- EIREENE PORTFOLIO -->
+            <div class="box" id="at_6">
+                <a href="eireene.html" target="_self"><img src="WebPage-Group-Ej.png" alt="#"></a>
+                
+                <div class="box_content">
+                    <h3>Eireene Joy Pamintuan</h3>
+                </div>
+            </div>
+            <!-- ZEVON PORTFOLIO -->
+            <div class="box" id="at_5">
+                <a href="Zevon.html" target="_self"><img src="WebPage-Group-Zevon.png" alt="#" class="disc_img"></a>
+                
+                <div class="box_content">
+                    <h3>Zevon Andry Osio</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- javscript for the reaving effect of section 2 -->
+    <script>
+        const revealText = document.querySelector('.container');
+    
+        window.addEventListener('scroll', function() {
+          const revealPosition = revealText.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+    
+          if (revealPosition < windowHeight / 1.3) {
+            revealText.style.opacity = '1';
+          } else {
+            revealText.style.opacity = '0';
+          }
+        });
+    </script><br><br>
+   
+</body>
+</html>
